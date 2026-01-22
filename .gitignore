@@ -1,0 +1,6 @@
+.features-gen/
+/.idea/
+node_modules/
+/playwright-report/
+/playwright/.cache/
+/test-results/

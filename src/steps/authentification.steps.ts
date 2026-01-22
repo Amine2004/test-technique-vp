@@ -4,7 +4,8 @@ import { test } from '../fixtures/fixture';
 const { Given, When, Then } = createBdd(test);
 
 Given('I am on the  login page', async ({ loginPage }) => {
-    await loginPage.navigateToLoginPage("https://sauce-demo.myshopify.com/account/login");
+    await loginPage.navigateToLoginPage( process.env.baseUrl);
+
 });
 When('I enter invalid  credentials', async ({ loginPage }, dataTable: any) => {
     const [{ email = '', password = '' }] = dataTable.hashes();

@@ -1,5 +1,11 @@
 import { defineConfig} from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
+import * as dotenv from "dotenv";
+
+const env = process.env.NODE_ENV || "staging";
+console.log(`Loading environment variables from .env.${env}`);
+dotenv.config({ path: `./env/.env.${env}` });
+
 
 const testDir = defineBddConfig({
     features: './src/features/*.feature', 

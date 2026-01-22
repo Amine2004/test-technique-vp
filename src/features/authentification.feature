@@ -14,7 +14,7 @@ Feature: Authentification Feature
             | email                        | password   |
             | testvalidaccount@yopmail.com | Mar!012023 |
         And I submit the login form
-        Then I should be redirected to the dashboard
+        Then the user is authenticated
 
     Scenario Outline: Unsuccessful login with invalid credentials
         When I enter invalid  credentials

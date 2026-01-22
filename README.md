@@ -99,3 +99,19 @@ The project is configured with:
 3. **Feature Files** - Write scenarios in `.feature` files using Gherkin syntax
 4. **Step Definitions** - Implement steps in `.steps.ts` files with Page Object Model
 5. **Fixtures** - Inject page objects into steps via custom fixtures
+
+## Potential Improvements
+
+1. **Enhance Utility Methods** - Extend existing utility methods (click, type, etc.) to make them more robust and context-aware. For example, in the click method, you could integrate AI-assisted self-healing to:
+- Analyze the DOM dynamically
+- Detect if the provided locator is missing
+- Suggest or fallback to an alternative locator automatically
+
+2. **Continuous Integration (CI)**
+Set up a CI pipeline (GitHub Actions) to automatically run tests on push or pull requests. This ensures regression coverage and faster feedback.
+
+3. **Device and Browser Parameters**
+Add flexibility to tests by supporting different environments:
+- Device types (desktop, tablet, mobile)
+- Browsers (Chromium, Firefox, WebKit)
+- Viewports, orientations, and resolutions

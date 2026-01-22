@@ -15,8 +15,22 @@ export class Util {
         await this.page.goto(url);
         await this.page.waitForLoadState("domcontentloaded");
     }
+
+    //assertions
     async expectToHaveText(locator: Locator, message: string) {
         await expect(locator).toBeVisible();
         await expect(locator).toHaveText(message);
+    }
+
+    async expectToHaveAttribute(
+        locator: Locator,
+        attribute: string,
+        expected: string | RegExp,
+        options?: { timeout?: number }
+        ) {
+        await expect(
+            locator,
+            `Expected element to have attribute "${attribute}" with value "${expected}"`
+        ).toHaveAttribute(attribute, expected, options);
     }
 }

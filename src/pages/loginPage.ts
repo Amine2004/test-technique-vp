@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { Util } from '../Utils/Util';
 
 export class loginPage extends Util {
@@ -15,7 +15,7 @@ export class loginPage extends Util {
         return this.page.locator('#customer_password');
     }
     get loginButton() {
-        return this.page.getByRole('button', { name: 'Sign In' });
+        return this.page.getByRole('button', { name: 'Sign In' })
     }
     get errorMessage() {
         return this.page.locator('div.errors li');
